@@ -8,30 +8,38 @@
 
 h1 {
   color: #6D6E71;
-  text-align: center;
 /*  padding: 12px;*/
   font-family: 'Roboto Slab', serif;
+  text-align: center;
 }
 
-.button-save {
+form {
+  display: grid;
+}
+
+#button-save {
   background-color: #00A79D;
-  color: #FFF;
+  color: #FFFFFF;
+
 }
 
-.button-save:hover {
+#button-save:hover {
   background-color: #045E55;
 }
 
 .input-fields {
   border: 2px solid #A8AAAD;
+  margin: 5% 5%;
+
 }
 
 .top-container {
   background-color: #E5F3F2;
+  display: block;
 }
 
 .search-container {
-
+  display: grid;
 }
 
 .ideas-container {
