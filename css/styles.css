@@ -1,0 +1,65 @@
+.full-wrapper {
+  margin: 4%;
+}
+
+.h1-span {
+  color: #00A79D;
+}
+
+h1 {
+  color: #6D6E71;
+  text-align: center;
+/*  padding: 12px;*/
+  font-family: 'Roboto Slab', serif;
+}
+
+.button-save {
+  background-color: #00A79D;
+  color: #FFF;
+}
+
+.button-save:hover {
+  background-color: #045E55;
+}
+
+.input-fields {
+  border: 2px solid #A8AAAD;
+}
+
+.top-container {
+  background-color: #E5F3F2;
+}
+
+.search-container {
+
+}
+
+.ideas-container {
+  border: 2px solid green;
+}
+
+h2 {
+  color: #6D6E71;
+  font-family: 'Roboto Slab', serif;
+}
+
+.ideas-content {
+  color: #939598;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.rating {
+  color: #606E71;
+}
+
+hr {
+  color: #D1D3D4;
+}
+
+.button-grades {
+  height: 15px;
+  width: 15px;
+}
+
+
+
