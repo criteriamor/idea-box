@@ -14,7 +14,7 @@
       <h1><span class="h1-span">idea</span>box</h1>
       <form>
         <input type="text" name="" class="input-fields" id="input-title" placeholder="Title">
-        <input type="text" name="" class="input-fields" id="input-body" placeholder="Body">
+        <input type="textarea" name="" class="input-fields" id="input-body" placeholder="Body">
         <button id="button-save">save</button>
       </form>
     </section>
@@ -24,18 +24,16 @@
     <ul class="ideas-container">
       <li class="card">
         <h2 class="ideas-title">Example Idea 1</h2>
-        <img src="css/images/delete.svg" id="button-delete" class="button-grades">
+        <button class='button-delete circle-buttons'> </button>
         <p class="ideas-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos nesciunt aperiam dolor. Ratione tempore, impedit sequi aliquid ea, sed sapiente. Iusto ducimus ab fugiat nesciunt modi quod, officia aperiam beatae.
         </p>
-        <img src="css/images/upvote.svg" id="button-upvote" class="button-grades">
-        <img src="css/images/downvote.svg" id="button-downvote" class="button-grades">
+        <button class='button-upvote circle-buttons'></button>
+        <button class='button-downvote circle-buttons'></button>
         <h3 class="rating">quality:<span id="grade"> swill</span></h3>
         <hr>
       </li>
     </ul>
   </section>
-
-
   <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="

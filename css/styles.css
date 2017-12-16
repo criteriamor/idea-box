@@ -1,5 +1,6 @@
 .full-wrapper {
   margin: 4%;
+  cursor: pointer;
 }
 
 .h1-span {
@@ -68,6 +69,50 @@ hr {
   height: 15px;
   width: 15px;
 }
+
+.circle-buttons {
+  background-repeat: no-repeat;
+  background-size: cover; 
+  height: 15px;
+  width: 15px;
+  background-color: transparent;
+  border: none; 
+}
+
+
+.button-delete {
+  background-image: url(images/delete.svg);
+}
+
+.button-delete:hover {
+  background-image: url(images/delete-hover.svg);
+}
+
+.button-upvote {
+  background-image: url(images/upvote.svg);
+
+}
+
+.button-upvote:hover {
+  background-image: url(images/upvote-hover.svg); 
+}
+
+.button-downvote {
+  background-image: url(images/downvote.svg);
+}
+
+.button-downvote:hover {
+  background-image: url(images/downvote-hover.svg); 
+}
+
+
+
+
+
+
+
+
+
 
 
 
