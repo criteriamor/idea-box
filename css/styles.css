@@ -1,7 +1,4 @@
-.full-wrapper {
-  margin: 4%;
-  cursor: pointer;
-}
+
 
 .h1-span {
   color: #00A79D;
@@ -9,9 +6,10 @@
 
 h1 {
   color: #6D6E71;
-/*  padding: 12px;*/
+  padding-top: .3em;
   font-family: 'Roboto Slab', serif;
   text-align: center;
+  font-size: 2em;
 }
 
 form {
@@ -21,7 +19,10 @@ form {
 #button-save {
   background-color: #00A79D;
   color: #FFFFFF;
-
+  margin: .7em 1.2em 1em 1.2em;
+  height: 2.1em;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 #button-save:hover {
@@ -30,8 +31,26 @@ form {
 
 .input-fields {
   border: 2px solid #A8AAAD;
-  margin: 5% 5%;
+  margin: 0em 1.2em;
+  height: 2em;
+  padding-left: .4em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
 
+#input-title {
+  margin-top: .8em;
+}
+
+#input-body {
+  height: 5em;
+  margin-top: .6em;
+  line-height: 1.7em;
+}
+
+#input-search {
+  margin-top: 1em;
+  margin-bottom: 1.9em;
 }
 
 .top-container {
@@ -44,21 +63,37 @@ form {
 }
 
 .ideas-container {
-  border: 2px solid green;
+  /*border: 2px solid green;*/
+}
+
+li.card {
+  margin: 0em 1.4em;
+  border-bottom: 1px solid #D1D3D4;
 }
 
 h2 {
   color: #6D6E71;
   font-family: 'Roboto Slab', serif;
+  display: inline-block;
 }
 
 .ideas-content {
   color: #939598;
   font-family: 'Open Sans', sans-serif;
+  padding-top: .5em;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  
 }
 
 .rating {
   color: #606E71;
+    display: inline-block;
+    margin-left: .8em;
+    letter-spacing: -.035em;
+    vertical-align: super;
+    margin-bottom: 1em;
 }
 
 hr {
@@ -73,8 +108,8 @@ hr {
 .circle-buttons {
   background-repeat: no-repeat;
   background-size: cover; 
-  height: 15px;
-  width: 15px;
+  height: 2.5em;
+  width: 2.5em;
   background-color: transparent;
   border: none; 
 }
@@ -82,6 +117,8 @@ hr {
 
 .button-delete {
   background-image: url(images/delete.svg);
+  margin: .4em;
+  float: right;
 }
 
 .button-delete:hover {
@@ -90,6 +127,8 @@ hr {
 
 .button-upvote {
   background-image: url(images/upvote.svg);
+  display: inline-block;
+  margin-top: 1.3em;
 
 }
 
@@ -99,6 +138,8 @@ hr {
 
 .button-downvote {
   background-image: url(images/downvote.svg);
+  display: inline-block;
+  margin-top: 1.3em;
 }
 
 .button-downvote:hover {
