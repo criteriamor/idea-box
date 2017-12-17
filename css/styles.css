@@ -36,6 +36,7 @@ form {
   padding-left: .4em;
   font-weight: bold;
   font-size: 1.2em;
+  width: max-content;
 }
 
 #input-title {
