@@ -1,4 +1,4 @@
-// window.onload = fetchIdea();
+fetchIdea();
 
 var $saveButton = $('#button-save');
 var $ideasList = $('.ideas-container');
@@ -14,7 +14,6 @@ function Idea(titleInput, bodyInput){
   this.bodyInput = bodyInput;
   this.quality = 'swill';
   this.uniqueId = (new Date).getTime()
-  // datestamp as instance variable or key:value
 }
 
 $saveButton.click(function(event) {
@@ -24,13 +23,11 @@ $saveButton.click(function(event) {
   var idea = new Idea (titleInput, bodyInput);
   var uniqueId = idea.uniqueId;
 
-  // console.log(uniqueId);
-  // console.log(idea);
   var stringifiedIdea = JSON.stringify(idea);
 
   localStorage.setItem(uniqueId, stringifiedIdea);
   console.log(stringifiedIdea)
-  // fetchIdea(uniqueId, idea);
+  // fetchIdea(uniqueId);
 
   // $ideasList.prepend(`<li class="card">
   //   <button class='button-delete circle-buttons'></button>
@@ -46,24 +43,26 @@ $saveButton.click(function(event) {
   // $('.button-upvote').on('click', clickUp);
   // $('.button-downvote').on('click', clickDown);
  });
-// function fetchIdea(uniqueId){
-//   var idea = JSON.parse(localStorage.getItem(uniqueId))
-//   // console.log(idea.data(uniqueId));
-//   var displayIdea = $('.ideas-container');
-//   displayIdea.html('');
-//   for(var i=0; i<idea.length; i++) {
-//     var titleIdea = idea[i].title;
-//     var bodyIdea = idea[i].body;
-//     displayIdea.html(`<li class="card">
-//     <button class='button-delete circle-buttons'></button>
-//     <h2 class="ideas-title">${idea.titleInputt}</h2>
-//     <p class="ideas-content">${idea.bodyInput}</p>
-//     <button class='button-upvote circle-buttons'></button>
-//     <button class='button-downvote circle-buttons'></button>
-//     <h3 class="rating">quality:<span id="grade">${idea.quality}</span></h3>
-//     </li>`)
-//   }
-// };
+function fetchIdea() {
+  // console.log(uniqueId)
+  // console.log(idea);
+  // displayIdea.html('');
+  for(var i=0; i < localStorage.length; i++) {
+    // var titleIdea = idea[i].title;
+    // var bodyIdea = idea[i].body;
+    var retrieveObject = localStorage.getItem(localStorage.key(i));
+    var ideaa = JSON.parse(retrieveObject);
+    console.log(ideaa)
+    $('.ideas-container').prepend(`<li class="card">
+    <button class='button-delete circle-buttons'></button>
+    <h2 class="ideas-title">${ideaa.titleInput}</h2>
+    <p class="ideas-content">${ideaa.bodyInput}</p>
+    <button class='button-upvote circle-buttons'></button>
+    <button class='button-downvote circle-buttons'></button>
+    <h3 class="rating">quality:<span id="grade">${ideaa.quality}</span></h3>
+    </li>`)
+  }; 
+};
 
 
 function deleteIdea() {
