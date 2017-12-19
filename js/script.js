@@ -6,11 +6,12 @@ var $grade = $('#grade');
 var arr = ['swill', 'plausible', 'genius'];
 
 $('ul').on('click', '.button-delete', deleteIdea);
+$('ul').on('click', '.button-upvote', voteUp);
 
 function Idea(titleInput, bodyInput){
   this.titleInput = titleInput;
   this.bodyInput = bodyInput;
-  this.quality = 'swill';
+  this.quality = ' swill';
   this.uniqueId = (new Date).getTime();
 }
 
@@ -19,7 +20,6 @@ $saveButton.click(function(event) {
   var titleInput = $('#input-title').val();
   var bodyInput = $('#input-body').val();
   var idea = new Idea (titleInput, bodyInput);
-  console.log(idea);
   var uniqueId = idea.uniqueId;
   var stringifiedIdea = JSON.stringify(idea);
   localStorage.setItem(uniqueId, stringifiedIdea);
@@ -36,6 +36,21 @@ function fetchIdea(idea) {
   }
 }
 
+function voteUp() {
+  var theParent = ($(this).parent('li').attr('id'));
+  var retrieveObject = localStorage.getItem(theParent);
+  var parsedObject = JSON.parse(retrieveObject);
+    if (parsedObject.quality === ' swill') {
+      parsedObject.quality = ' plausible';
+      $(this).siblings('h3').find('span').text(' plausible');
+    } else {
+      parsedObject.quality = 'genius';
+      $(this).siblings('h3').find('span').text(' genius');
+    }
+  var strung = JSON.stringify(parsedObject);
+  localStorage.setItem(theParent, strung);
+}
+
 function prependIdea(idea) {
   $('.ideas-container').prepend(`<li class="card" id="${idea.uniqueId}"> 
   <button class='button-delete circle-buttons'></button>
@@ -47,12 +62,10 @@ function prependIdea(idea) {
   </li>`);
 };
 
-
 function deleteIdea() {
     var theParent = ($(this).parent('li').attr('id'));
-    localStorage.removeItem(theParent);
+    localStorage.removeItem(theParent); 
     $(this).parent('li').remove();
-    // console.log(theParent);
 };
 
 
