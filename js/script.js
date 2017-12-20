@@ -1,4 +1,4 @@
-window.onload = fetchIdea()
+window.onload = fetchIdea();
 
 var $saveButton = $('#button-save');
 var $ideasList = $('.ideas-container');
@@ -113,8 +113,6 @@ function deleteIdea() {
     $(this).parent('li').remove();
 };
 
-
-
 function searchTheThings() {
   var filter = $(this).val();
   var title = $('.ideas-title');
@@ -123,80 +121,8 @@ function searchTheThings() {
       $(title[i]).parent('li').hide();
       if ($(title[i]).text().includes(filter)) {
         $(title[i]).parent('li').show();
-      }
     }
+  }
 }
-
-  // var howMany = $('.ideas-title');
-  // for (var i = 0; i < howMany.length; i++) {
-  //   var searchInput = $('#input-search').val();
-  //   var liTitle = $($('.ideas-title')[i]).text().includes();
-  //   var liBody = $($('.ideas-content')[i]).text().includes();
-  //   if $($(searchInput === liTitle || liBody)) {
-  //     console.log(liTitle);
-  //   }
-      
-  //     // $(this);
-  //     // console.log($(this));
-  //   }
-  //   // console.log(searchInput);
-  //   //console.log(liTitle);
-  //   // console.log(liBody);
-  // }
-  
-  // console.log(parsedObject);
-  // for (var i = 0; i > parsedObject.length; i++) {
-    // console.log(parsedObject);
-
-  // var theParent = ($(this).parent('.search-container').siblings('ul').find('li').attr('id'));
-  // var retrieveObject = localStorage.getItem(theParent);
-  // var parsedObject = JSON.parse(retrieveObject);
-
-
-  // if (searchInput.text().includes() === parsedObject.titleInput || parsedObject.bodyInput) {
-  //   console.log(searchInput);
-  //   console.log(parsedObject.titleInput);
-  //   console.log(parsedObject.bodyInput);
-  //   console.log(1);
-
-    // $(this.parsedObject).css('backgroundColor', 'red');
-    
-  // } else {
-  //   console.log(2);
-  // }
-
-
-  //  {
-  //   console.log(parsedObject.length);
-  //   var searchInput = $('input-search').val();
-  //     if (searchInput !== parsedObject.titleInput || parsedObject.bodyInput) {   
-  //     console.log(1);
-  //   }
-  // } 
-
-  // .includes()
-  // .show()
-  // .hide()
-  
-// }
-
-
-//   debugger;
-//   var searchInput = document.querySelector('#input-search');
-//   var parentContainer = document.querySelector('.ideas-container');
-//   var listCard = parentContainer.querySelector('.card');
-//   var howMany = parentContainer.getElementsByTagName('li').length;
-//   for (var i = 0; i < howMany.length; i++) {
-//     var searchValue = searchInput.value.toLowerCase();
-//     var title = listCard[i].document.querySelector('h2')[0];
-//     console.log(title);
-//     console.log(searchValue);
-//     if (title.innerHTML.toLowerCase().indexOf(searchInput) > -1) {
-//       listCard[i].style.display = "";
-//     } else {
-//       listCard[i].style.display = "none";
-//   }
-// }
-
 
 
