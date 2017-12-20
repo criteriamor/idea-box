@@ -10,7 +10,7 @@ $('ul').on('click', '.button-upvote', voteUp);
 $('ul').on('click', '.button-downvote', voteDown);
 $('ul').on('click', '.ideas-title', ideaEditable);
 $('ul').on('click', '.ideas-content', bodyEditable);
-// $('#input-search').on('keyup', searchTheThings);
+$('#input-search').on('keyup', searchTheThings);
 
 function Idea(titleInput, bodyInput){
   this.titleInput = titleInput;
@@ -113,30 +113,19 @@ function deleteIdea() {
     $(this).parent('li').remove();
 };
 
-var whatsThis = $('li').filter(function (index) {
-  return $(this).children('h2').html();
-});
 
-console.log(whatsThis);
 
-// function searchTheThings() {
-//   debugger;
-//   var searchInput = document.querySelector('#input-search');
-//   var parentContainer = document.querySelector('.ideas-container');
-//   var listCard = parentContainer.querySelector('.card');
-//   var howMany = parentContainer.getElementsByTagName('li').length;
-//   for (var i = 0; i < howMany.length; i++) {
-//     var searchValue = searchInput.value.toLowerCase();
-//     var title = listCard[i].document.querySelector('h2')[0];
-//     console.log(title);
-//     console.log(searchValue);
-//     if (title.innerHTML.toLowerCase().indexOf(searchInput) > -1) {
-//       listCard[i].style.display = "";
-//     } else {
-//       listCard[i].style.display = "none";
-//   }
-// }
-// }
+function searchTheThings() {
+  var filter = $(this).val();
+  var title = $('.ideas-title');
+  var body = $('.ideas-content');
+    for (var i = 0; i < title.length; i++) {
+      $(title[i]).parent('li').hide();
+      if ($(title[i]).text().includes(filter)) {
+        $(title[i]).parent('li').show();
+      }
+    }
+}
 
   // var howMany = $('.ideas-title');
   // for (var i = 0; i < howMany.length; i++) {
@@ -189,6 +178,24 @@ console.log(whatsThis);
   // .show()
   // .hide()
   
+// }
+
+
+//   debugger;
+//   var searchInput = document.querySelector('#input-search');
+//   var parentContainer = document.querySelector('.ideas-container');
+//   var listCard = parentContainer.querySelector('.card');
+//   var howMany = parentContainer.getElementsByTagName('li').length;
+//   for (var i = 0; i < howMany.length; i++) {
+//     var searchValue = searchInput.value.toLowerCase();
+//     var title = listCard[i].document.querySelector('h2')[0];
+//     console.log(title);
+//     console.log(searchValue);
+//     if (title.innerHTML.toLowerCase().indexOf(searchInput) > -1) {
+//       listCard[i].style.display = "";
+//     } else {
+//       listCard[i].style.display = "none";
+//   }
 // }
 
 
