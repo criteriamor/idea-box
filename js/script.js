@@ -26,7 +26,7 @@ function saveIdea(event) {
   prependIdea(idea);
   $('#input-title').val('');
   $('#input-body').val('');
- };
+}
 
 function fetchIdea(idea) {
   for (var i = 0; i < localStorage.length; i++){
@@ -101,14 +101,14 @@ function prependIdea(idea) {
   <button class='button-downvote circle-buttons'></button>
   <h3 class="rating">quality:<span id="grade">${idea.quality}</span></h3>
   </li>`);
-};
+}
 
 function deleteIdea() {
     var theParent = ($(this).parent('li').attr('id'));
     console.log(this);
     localStorage.removeItem(theParent); 
     $(this).parent('li').remove();
-};
+}
 
 function searchTheIdeas() {
   var filter = $(this).val();
@@ -119,8 +119,7 @@ function searchTheIdeas() {
       if ($(title[i]).text().includes(filter) || $(body[i]).text().includes(filter)) {
         $(title[i]).parent('li').show();
       }
-    }
-    
+    }    
 }
 
 
