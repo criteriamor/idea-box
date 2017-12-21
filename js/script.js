@@ -1,16 +1,12 @@
 window.onload = fetchIdea();
 
-var $saveButton = $('#button-save');
-var $ideasList = $('.ideas-container');
-var $grade = $('#grade');
-var arr = ['swill', 'plausible', 'genius'];
-
+$('#button-save').on('click', saveIdea);
 $('ul').on('click', '.button-delete', deleteIdea);
 $('ul').on('click', '.button-upvote', voteUp);
 $('ul').on('click', '.button-downvote', voteDown);
-$('ul').on('click', '.ideas-title', ideaEditable);
+$('ul').on('click', '.ideas-title', titleEditable);
 $('ul').on('click', '.ideas-content', bodyEditable);
-$('#input-search').on('keyup', searchTheThings);
+$('#input-search').on('keyup', searchTheIdeas);
 
 function Idea(titleInput, bodyInput){
   this.titleInput = titleInput;
@@ -19,7 +15,7 @@ function Idea(titleInput, bodyInput){
   this.uniqueId = (new Date).getTime();
 }
 
-$saveButton.click(function(event) {
+function saveIdea(event) {
   event.preventDefault();
   var titleInput = $('#input-title').val();
   var bodyInput = $('#input-body').val();
@@ -30,7 +26,7 @@ $saveButton.click(function(event) {
   prependIdea(idea);
   $('#input-title').val('');
   $('#input-body').val('');
- });
+ };
 
 function fetchIdea(idea) {
   for (var i = 0; i < localStorage.length; i++){
@@ -40,7 +36,7 @@ function fetchIdea(idea) {
   }
 }
 
-function ideaEditable() {
+function titleEditable() {
   $(this).prop('contenteditable', true).focus();
   $(this).on('blur', function() {
     var newInfo = $(this).html(); 
@@ -109,20 +105,22 @@ function prependIdea(idea) {
 
 function deleteIdea() {
     var theParent = ($(this).parent('li').attr('id'));
+    console.log(this);
     localStorage.removeItem(theParent); 
     $(this).parent('li').remove();
 };
 
-function searchTheThings() {
+function searchTheIdeas() {
   var filter = $(this).val();
   var title = $('.ideas-title');
   var body = $('.ideas-content');
     for (var i = 0; i < title.length; i++) {
       $(title[i]).parent('li').hide();
-      if ($(title[i]).text().includes(filter)) {
+      if ($(title[i]).text().includes(filter) || $(body[i]).text().includes(filter)) {
         $(title[i]).parent('li').show();
+      }
     }
-  }
+    
 }
 
 

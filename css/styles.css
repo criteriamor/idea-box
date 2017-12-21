@@ -53,8 +53,8 @@ h1 {
   display: block;
 }
 
-li.card {
-  margin: 0em 1.4em;
+.card {
+  margin: 1em 1.4em 0em 1.4em;
   border-bottom: 1px solid #D1D3D4;
   margin-left: 5%;
   margin-right: 32%;
